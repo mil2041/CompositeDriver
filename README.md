@@ -13,8 +13,7 @@ CompositeDriver combined mutation recurrence and functional impact to identify c
 
 
 ### Installation
-Installing CompositeDriver
-You will need to install devtools for running CompositeDriver package
+User will need to install devtools in R for running CompositeDriver package
 
 ```sh
 install.packages("devtools")
