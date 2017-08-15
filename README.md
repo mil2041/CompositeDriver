@@ -15,13 +15,15 @@ devtools::install_github("khuranalab/CompositeDriver")
 
 ### CompositeDriver example
 User will need to 
+
 * (1) download [drm.gene.bed](http://khuranalab.med.cornell.edu/FunSeq_data/FunSeq2_DC2/data/drm.gene.bed) file and put it in the "/path/to/dataContext" folder
 * (2) assign "/path/to/Output.vcf" path for FunSeq2 annotated vcf file
 * (3) assign "/path/to/output" path for saving CompositeDriver results
 * (4) tumorType: name of tumor type
-* (5) useCores: number of cores for parellel computation 
-* (6) seedNum:  random number seed number (default is 42)  
-* (7) reSampleIter: sampling iterations (suggesting number is 1000000 iterations) 
+* (5) seedNum: random number seed number (default is 42)
+* (6) functionalImpactScore: name of functional impact scoring scheme (current supports "FunSeq2" or "MCAP")
+* (7) reSampleIter: sampling iterations (suggesting number is 1000000 iterations)
+* (8) useCores: number of cores for parellel computation 
 
 ```sh
 
