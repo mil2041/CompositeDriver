@@ -1,37 +1,59 @@
-## Welcome to GitHub Pages
+## CompositeDriver
 
-You can use the [editor on GitHub](https://github.com/mil2041/CompositeDriver/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### An R package detecting SNV coding drivers in cancer
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Installing CompositeDriver
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+You will need to install devtools for running CompositeDriver package
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```sh
+install.packages("devtools")
+library("devtools")
+devtools::install_github("khuranalab/CompositeDriver")
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### CompositeDriver example
+User will need to 
+* (1) download [drm.gene.bed](http://khuranalab.med.cornell.edu/FunSeq_data/FunSeq2_DC2/data/drm.gene.bed) file and put it in the "/path/to/dataContext" folder
+* (2) assign "/path/to/Output.vcf" path for FunSeq2 annotated vcf file
+* (3) assign "/path/to/output" path for saving CompositeDriver results
+* (4) tumorType: name of tumor type
+* (5) useCores: number of cores for parellel computation 
+* (6) seedNum:  random number seed number (default is 42)  
+* (7) reSampleIter: sampling iterations (suggesting number is 1000000 iterations) 
 
-### Jekyll Themes
+```sh
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mil2041/CompositeDriver/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+library(CompositeDriver)
 
-### Support or Contact
+#####
+# global parameters setup
+#####
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+  dataContextDir<-"/path/to/dataContext"
+  annotatedInput<-"/path/to/Output.vcf"
+  outputDir<-"/path/to/output"
+  tumorType<-"GBM"
+  seedNum<-42
+  functionalImpactScore<-"FunSeq2"
+  reSampleIter<-1000
+  useCores<-6
+  debugMode<-FALSE
+
+#####
+  
+  preProcessVCF(annotatedInput,functionalImpactScore,outputDir,tumorType,useCores)
+
+#####
+
+  mutationType<-"CDS"
+  cdsOutputDf<-getCDSpvalue(outputDir,tumorType,mutationType,
+                            reSampleIter=reSampleIter,
+                            seedNum=seedNum,debugMode=debugMode)
+
+#####
+
+
+```
+
