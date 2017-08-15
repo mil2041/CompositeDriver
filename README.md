@@ -1,6 +1,13 @@
 ## CompositeDriver
 
-### An R package detecting SNV coding drivers in cancer
+### An R package detecting SNV coding and non-coding drivers in cancer
+
+Update log
+```sh
+* CompositeDriver (version 0.2) supports SNV coding and non-coding drivers  
+* CompositeDriver (version 0.1) supports SNV coding drivers   
+```
+
 
 Installing CompositeDriver
 
@@ -21,9 +28,10 @@ User will need to
 * (3) assign "/path/to/output" path for saving CompositeDriver results
 * (4) tumorType: name of tumor type
 * (5) seedNum: random number seed number (default is 42)
-* (6) functionalImpactScore: name of functional impact scoring scheme (current supports "FunSeq2" or "MCAP")
-* (7) reSampleIter: sampling iterations (suggesting number is 1000000 iterations)
-* (8) useCores: number of cores for parellel computation 
+* (6) functionalImpactScoreCDS: name of functional impact scoring scheme for CDS (current supports "FunSeq2" or "MCAP")
+* (7) functionalImpactScoreNonCoding: name of functional impact scoring scheme for non-coding (current supports "FunSeq2" )
+* (8) reSampleIter: sampling iterations (suggesting number is 1000000 iterations)
+* (9) useCores: number of cores for parellel computation 
 
 ```sh
 
@@ -38,14 +46,15 @@ library(CompositeDriver)
   outputDir<-"/path/to/output"
   tumorType<-"GBM"
   seedNum<-42
-  functionalImpactScore<-"FunSeq2"
+  functionalImpactScoreCDS<-"FunSeq2"
+  functionalImpactScoreNonCoding<-"FunSeq2"
   reSampleIter<-1000
   useCores<-6
   debugMode<-FALSE
 
 #####
   
-  preProcessVCF(annotatedInput,functionalImpactScore,outputDir,tumorType,useCores)
+  preProcessVCF(annotatedInput,functionalImpactScoreCDS,functionalImpactScoreNonCoding,outputDir,tumorType,useCores)
 
 #####
 
