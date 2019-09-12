@@ -1,5 +1,9 @@
 ## CompositeDriver
 
+### Refernece
+
+* Matthew H Bailey, Collin Tokheim, Eduard Porta Pardo, Sohini Sengupta, Denis Bertrand, Amila Weerasinghe, Antonio Colaprico, Michael C Wendl, Jaegil Kim, Brendan Reardon, Patrick Kwok Shing Ng, Kang Jin Jeong, Song Cao, Zixing Wang, Jianjiong Gao, Qingsong Gao, Fang Wang, Eric Minwei Liu, Loris Mularoni, Carlota Rubio Perez, Niranjan Nagarajan, Isidro Cortés Ciriano, Daniel Cui Zhou, Wen Wei Liang, Julian M Hess, Venkata D Yellapantula, David Tamborero, Abel Gonzalez Perez, Chayaporn Suphavilai, Jia Yu Ko, Ekta Khurana, Peter J Park, Eliezer M Van Allen, Han Liang, Michael S Lawrence, Adam Godzik, Nuria Lopez Bigas, Josh Stuart, David Wheeler, Gad Getz, Ken Chen, Alexander J Lazar, Gordon B Mills, Rachel Karchin, Li Ding, MC3 Working Group, Cancer Genome Atlas Research Network [“Comprehensive Characterization of Cancer Driver Genes and Mutations”](https://www.ncbi.nlm.nih.gov/pubmed/29625053), Cell 173, 371 385.e18 (2018). 
+
 ### Overview
 CompositeDriver combined mutation recurrence and functional impact to identify coding and non-coding cancer drivers
 
@@ -74,7 +78,7 @@ For any questions, comments and suggestions, please email
 * ekk2003 [at] med.cornell.edu 
 * mil2041 [at] med.cornell.edu
 
-Copyright © 2016-2017 Ekta Khurana Lab, WCMC
+Copyright © 2016-2019 Ekta Khurana Lab, WCMC
 
 ### License 
 This project is licensed under the CC BY-NC 4.0 
